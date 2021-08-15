@@ -21,7 +21,6 @@ from nltk.stem import SnowballStemmer
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 import pickle
 import streamlit as st
-import os, urllib, cv2
 import urllib
 import pickle
 import cloudpickle as cp
