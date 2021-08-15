@@ -22,6 +22,13 @@ from nltk.tokenize.treebank import TreebankWordDetokenizer
 import pickle
 import streamlit as st
 import os, urllib, cv2
+import urllib
+import pickle
+import cloudpickle as cp
+from urllib.request import urlopen
+
+
+Nu_SVC_classifier = pickle.load(urlopen("https://raw.github.com/aliardouz0/IML-P05/main/clf.pk"))
 
 
 #### DEFINE PREPROCESSING FUCTIONS 
@@ -36,14 +43,10 @@ def main():
 	#intro_markdown = read_markdown_file("intructions for tha app.md")
     #st.markdown(intro_markdown, unsafe_allow_html=True)
 
-    with open('sw.pk', 'rb') as file:
-        sw = pickle.load(file)
-    with open('clf.pk', 'rb') as file:
-        clf = pickle.load(file)
-    with open('tfidf_2.pk', 'rb') as file:
-        tfidf_2 = pickle.load(file)
-    with open('F_tags.pk', 'rb') as file:
-        F_tags = pickle.load(file)
+    sw = pickle.load(urlopen("https://raw.github.com/aliardouz0/IML-P05/main/sw.pk"))
+    clf = pickle.load(urlopen("https://raw.github.com/aliardouz0/IML-P05/main/clf.pk"))
+    tfidf_2 = pickle.load(urlopen("https://raw.github.com/aliardouz0/IML-P05/main/tfidf_2.pk"))
+    F_tags = pickle.load(urlopen("https://raw.github.com/aliardouz0/IML-P05/main/F_tags.pk"))
     # Download external dependencies.
     #for filename in EXTERNAL_DEPENDENCIES.keys():
      #   download_file(filename)
