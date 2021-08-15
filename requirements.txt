@@ -1,3 +1,4 @@
 streamlit==0.86
 scikit-learn
 matplotlib
+seaborn
