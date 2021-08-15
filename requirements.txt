@@ -5,4 +5,3 @@ seaborn
 statsmodels
 nltk
 bs4
-cv2
